@@ -1,5 +1,14 @@
 # React + Vite
 
+## TODO
+
+- Pages: Home (with post card grid)
+- React router
+- Header
+- Sidebar with posted month filter picker
+
+State -> pages -> parts
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
