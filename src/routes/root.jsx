@@ -1,0 +1,15 @@
+import Header from "@/components/Parts/Header";
+import { Outlet } from "react-router-dom";
+
+const Root = ({ ...props }) => {
+  return (
+    <div className="root flex flex-col">
+      <Header />
+      <main className="flex flex-col p-4">
+        <Outlet />
+      </main>
+    </div>
+  );
+};
+
+export default Root;
