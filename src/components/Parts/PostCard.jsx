@@ -7,20 +7,23 @@ import {
   CardDescription,
   CardContent,
 } from "../ui/card";
+import * as DateUtils from "../../lib/dateUtils";
 
 const PostCard = ({ title, content, posted }) => {
+  const prettyDate = DateUtils.prettifyDate(posted);
+
   return (
-    <Card className={cn("w-[300px]")}>
+    <Card className={cn("w-full h-full")}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>
           <CardDescription>
-            <span>{posted}</span>
+            <span>{prettyDate}</span>
           </CardDescription>
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{content}</p>
+        <p>{content.substring(0, 200) + " ..."}</p>
       </CardContent>
     </Card>
   );

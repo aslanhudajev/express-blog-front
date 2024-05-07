@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <nav className="w-full p-4 shadow-sm">
+    <nav className="w-full p-4 shadow-sm sticky top-0 z-50 bg-white">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>

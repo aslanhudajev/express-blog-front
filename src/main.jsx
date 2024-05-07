@@ -7,16 +7,23 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Root from "./routes/root";
 import HomePage from "./components/Pages/Home";
+import ErrorPage from "./components/Pages/Error";
+import PostPage from "./components/Pages/Post";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/post/:postId",
+        element: <PostPage />,
       },
     ],
   },
