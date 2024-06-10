@@ -1,12 +1,10 @@
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
@@ -19,7 +17,7 @@ const Header = () => {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight mr-4">
+            <h2 className="logo scroll-m-20 text-3xl font-semibold tracking-tight mr-4">
               Marble
             </h2>
           </NavigationMenuItem>
