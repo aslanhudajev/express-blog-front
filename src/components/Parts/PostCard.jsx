@@ -9,7 +9,7 @@ import {
 } from "../ui/card";
 import * as DateUtils from "../../lib/dateUtils";
 
-const PostCard = ({ title, content, posted }) => {
+const PostCard = ({ title, description, posted }) => {
   const prettyDate = DateUtils.prettifyDate(posted);
 
   return (
@@ -23,7 +23,7 @@ const PostCard = ({ title, content, posted }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{content.substring(0, 200) + " ..."}</p>
+        <p>{description}</p>
       </CardContent>
     </Card>
   );

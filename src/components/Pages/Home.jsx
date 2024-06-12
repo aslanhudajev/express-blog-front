@@ -2,9 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import PostGrid from "../Parts/PostGrid";
 import PostCardSkeleton from "../Parts/PostCardSkeleton";
 
-//!TODO Add fetch to get posts
-//!TODO Specify which props, instead of destructuring props with ...
-const HomePage = ({ ...props }) => {
+const HomePage = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
@@ -40,11 +38,21 @@ const HomePage = ({ ...props }) => {
     );
   }
 
-  return (
-    <section className="content">
-      <PostGrid posts={data} />
-    </section>
-  );
+  if (data.length > 0) {
+    return (
+      <section className="content">
+        <PostGrid posts={data} />
+      </section>
+    );
+  } else {
+    return (
+      <section className="flex flex-col justify-center items-center h-svh">
+        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+          Uh oh.. There is nothing here
+        </h1>
+      </section>
+    );
+  }
 };
 
 export default HomePage;

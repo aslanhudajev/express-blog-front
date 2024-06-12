@@ -1,7 +1,7 @@
 import Header from "@/components/Parts/Header";
 import { Outlet } from "react-router-dom";
 
-const Root = ({ ...props }) => {
+const Root = () => {
   return (
     <div className="root flex flex-col">
       <Header />

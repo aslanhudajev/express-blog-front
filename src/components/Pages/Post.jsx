@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import * as DateUtils from "../../lib/dateUtils";
 import ReactHtmlParser from "react-html-parser";
 
-const PostPage = ({ ...props }) => {
+const PostPage = () => {
   const { postId } = useParams();
 
   const { isPending, error, data } = useQuery({
@@ -42,20 +42,19 @@ const PostPage = ({ ...props }) => {
   const prettyDate = DateUtils.prettifyDate(data.posted);
 
   return (
-    <section className="content flex flex-col items-start justify-start w-full gap-4 p-4">
-      <div className="header mb-4">
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-          {data.title}
-        </h1>
-        <span className="posted text-sm text-muted-foreground">
-          {prettyDate}
-        </span>
-      </div>
-      <div
-      // className="post-text"
-      // dangerouslySetInnerHTML={{ __html: contentHtmlSanitized }} //! <-- This should be changed to take pure formatted html.
-      >
-        {ReactHtmlParser(data.content)}
+    <section className="content flex flex-col items-start justify-start gap-4 p-4 w-full">
+      <div className="w-full flex flex-col items-center">
+        <div className="w-1/3 flex flex-col">
+          <div className="header mb-4">
+            <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+              {data.title}
+            </h1>
+            <span className="posted text-sm text-muted-foreground">
+              {prettyDate}
+            </span>
+          </div>
+          <div>{ReactHtmlParser(data.content)}</div>
+        </div>
       </div>
     </section>
   );

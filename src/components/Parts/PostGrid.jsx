@@ -12,7 +12,7 @@ const PostGrid = ({ posts }) => {
               key={post._id}
               title={post.title}
               //!TODO Make sure that you create a sample content variable for each post
-              content={post.content}
+              description={post.description}
               posted={post.posted}
             />
           </Link>
