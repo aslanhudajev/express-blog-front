@@ -44,7 +44,7 @@ const PostPage = () => {
   return (
     <section className="content flex flex-col items-start justify-start gap-4 p-4 w-full">
       <div className="w-full flex flex-col items-center">
-        <div className="w-1/3 flex flex-col">
+        <div className="lg:w-1/3 md:w-1/2 flex flex-col">
           <div className="header mb-4">
             <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
               {data.title}
