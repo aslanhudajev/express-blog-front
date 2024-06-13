@@ -10,10 +10,13 @@ const PostPage = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["post"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:3000/api/blog/post/${postId}`, {
-        method: "GET",
-        mode: "cors",
-      });
+      const res = await fetch(
+        `https://${import.meta.env.VITE_API_URL}/api/blog/post/${postId}`,
+        {
+          method: "GET",
+          mode: "cors",
+        }
+      );
 
       const data = await res.json();
       return data;
@@ -32,8 +35,8 @@ const PostPage = () => {
 
   if (error) {
     return (
-      <section className="content flex flex-col items-center justify-center w-full h-svh">
-        <h2>Uh oh, there is no post here...</h2>
+      <section className="content flex flex-col items-center justify-center w-full h-svh gap-4">
+        <h1>Uh oh, there is no post here...</h1>
         <span>Error: {error.message}</span>
       </section>
     );

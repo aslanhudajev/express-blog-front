@@ -6,10 +6,13 @@ const HomePage = () => {
   const { isPending, error, data } = useQuery({
     queryKey: ["posts"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:3000/api/blog/posts", {
-        method: "GET",
-        mode: "cors",
-      });
+      const res = await fetch(
+        `http://${import.meta.env.VITE_API_URL}/api/blog/posts`,
+        {
+          method: "GET",
+          mode: "cors",
+        }
+      );
 
       const data = await res.json();
       return data;
