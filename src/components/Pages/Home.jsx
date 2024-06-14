@@ -7,7 +7,7 @@ const HomePage = () => {
     queryKey: ["posts"],
     queryFn: async () => {
       const res = await fetch(
-        `http://${import.meta.env.VITE_API_URL}/api/blog/posts`,
+        `https://${import.meta.env.VITE_API_URL}/api/blog/posts`,
         {
           method: "GET",
           mode: "cors",
